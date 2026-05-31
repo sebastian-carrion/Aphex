@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Space_Mono, Young_Serif } from "next/font/google";
+import { Young_Serif } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const sfPro = localFont({
   variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  src: [
+    { path: "../../public/fonts/SF-Pro-Text-Regular.otf",  weight: "400", style: "normal" },
+    { path: "../../public/fonts/SF-Pro-Text-Medium.otf",   weight: "500", style: "normal" },
+    { path: "../../public/fonts/SF-Pro-Text-Semibold.otf", weight: "600", style: "normal" },
+    { path: "../../public/fonts/SF-Pro-Text-Bold.otf",     weight: "700", style: "normal" },
+  ],
 });
 
 const youngSerif = Young_Serif({
@@ -33,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${spaceMono.variable} ${youngSerif.variable} h-full antialiased`}
+      className={`${sfPro.variable} ${youngSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
