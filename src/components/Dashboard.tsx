@@ -343,7 +343,7 @@ export function AppShell({ onSignOut }: { onSignOut: () => void }) {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col">
       {/* Top nav */}
-      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-3.5 border-b border-white/8 bg-[#0a0a0a]/80 backdrop-blur-md">
+      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-3.5 border-b border-white/[0.08] bg-[#0a0a0a]/80 backdrop-blur-md">
         <div className="flex items-center gap-2">
           <span className="w-7 h-7 rounded-lg bg-white flex items-center justify-center">
             <Icon name="coffee" size={14} className="text-black" />
@@ -379,7 +379,7 @@ export function AppShell({ onSignOut }: { onSignOut: () => void }) {
       </main>
 
       {/* Mobile bottom nav */}
-      <nav className="sm:hidden fixed bottom-0 inset-x-0 border-t border-white/8 bg-[#0a0a0a]/90 backdrop-blur-md flex">
+      <nav className="sm:hidden fixed bottom-0 inset-x-0 border-t border-white/[0.08] bg-[#0a0a0a]/90 backdrop-blur-md flex">
         {NAV.map((item) => (
           <button key={item.v} onClick={() => setNav(item.v)}
             className={cn('flex-1 flex flex-col items-center gap-1 py-3 text-[10px] transition-colors',

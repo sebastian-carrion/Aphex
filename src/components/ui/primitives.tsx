@@ -105,10 +105,10 @@ export function Bars({ data, height = 110, accentIndex = -1, labels }: {
         {data.map((v, i) => (
           <div key={i} className="flex-1 flex flex-col justify-end">
             <div
-              className={cn('rounded-t-sm rounded-b-[2px] transition-all duration-300 min-h-[3px]',
-                i === accentIndex ? 'bg-white' : v === 0 ? 'bg-white/10' : 'bg-white/35'
+              className={cn('rounded-t-sm rounded-b-[2px] transition-all duration-300',
+                i === accentIndex ? 'bg-white' : v === 0 ? 'bg-white/[0.08]' : 'bg-white/35'
               )}
-              style={{ height: `${Math.max(3, (v / mx) * 100)}%` }}
+              style={{ height: `${Math.max(8, (v / mx) * 100)}%` }}
             />
           </div>
         ))}
