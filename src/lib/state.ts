@@ -113,7 +113,17 @@ export function buildSeed(): Weeks {
 const STORE_KEY = 'aphex_app_v1';
 export function loadStore(): AppState | null {
   if (typeof window === 'undefined') return null;
-  try { const raw = localStorage.getItem(STORE_KEY); if (raw) return JSON.parse(raw); } catch { }
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (!raw) return null;
+    const state: AppState = JSON.parse(raw);
+    // Migrate stale account name left over from prototype defaults
+    if (state.account?.name === 'Maya' || state.account?.name === 'Maya Rivera') {
+      state.account = DEFAULT_ACCOUNT;
+      localStorage.setItem(STORE_KEY, JSON.stringify(state));
+    }
+    return state;
+  } catch { }
   return null;
 }
 export function saveStore(obj: AppState) {
