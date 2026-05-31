@@ -3,6 +3,7 @@
 export const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 export const DAY_FULL = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 export const MONTHS_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 // Pinned reference date matches prototype seed
 export const TODAY = new Date(2026, 4, 28); // May 28 2026 (Thu)
@@ -120,5 +121,5 @@ export function saveStore(obj: AppState) {
   try { localStorage.setItem(STORE_KEY, JSON.stringify(obj)); } catch { }
 }
 
-export const DEFAULT_ACCOUNT: Account = { name: 'Maya Rivera', email: 'maya@cornercafe.co', role: 'Barista · Corner Café' };
+export const DEFAULT_ACCOUNT: Account = { name: 'Sebastian', email: 'youremail@aphex.com', role: 'Barista · Corner Café' };
 export const DEFAULT_TWEAKS: Tweaks = { wage: 17, currency: '$', goal: 600, dark: true };

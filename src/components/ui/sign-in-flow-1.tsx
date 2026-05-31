@@ -637,7 +637,7 @@ export const SignInPage = ({ className, onSignedIn }: SignInPageProps) => {
                       <div className="relative">
                         <input
                           type="email"
-                          placeholder="you@cafe.com"
+                          placeholder="youremail@aphex.com"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           className="w-full backdrop-blur-[1px] text-white border border-white/10 bg-white/5 rounded-full py-3 px-4 focus:outline-none focus:border-white/30 text-center text-sm placeholder:text-white/30"
