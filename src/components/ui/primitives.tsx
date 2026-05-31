@@ -39,8 +39,8 @@ export function Card({ children, light, accent, className = '', style, onClick }
       onClick={onClick}
       style={style}
       className={cn(
-        'rounded-[18px] p-5 relative border',
-        light ? 'bg-white/10 border-white/15' : accent ? 'bg-white/[0.06] border-white/20' : 'bg-white/[0.05] border-white/10',
+        'rounded-[18px] p-5 relative border backdrop-blur-sm',
+        light ? 'bg-white/[0.14] border-white/15' : accent ? 'bg-white/[0.10] border-white/20' : 'bg-white/[0.09] border-white/10',
         onClick && 'cursor-pointer',
         className
       )}
