@@ -726,13 +726,15 @@ export function AppShell({ onSignOut }: { onSignOut: () => void }) {
         {/* Logo */}
         <div className="flex items-center gap-2 flex-shrink-0">
           <span className="w-7 h-7 rounded-full border border-white/20 bg-white/[0.06] flex items-center justify-center">
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-              <path d="M6.5 1.25L11.75 11H1.25L6.5 1.25Z" stroke="white" strokeWidth="1.25" strokeLinejoin="round"/>
-              <line x1="3.25" y1="8" x2="9.75" y2="8" stroke="white" strokeWidth="1.25" strokeLinecap="round"/>
+            <svg width="15" height="15" viewBox="0 0 100 100" fill="currentColor" className="text-white" aria-hidden="true">
+              <rect x="42" y="16" width="16" height="12"/>
+              <rect x="36" y="34" width="10" height="12"/><rect x="54" y="34" width="10" height="12"/>
+              <rect x="30" y="52" width="40" height="12"/>
+              <rect x="22" y="70" width="14" height="12"/><rect x="64" y="70" width="14" height="12"/>
             </svg>
           </span>
           <span
-            style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', fontWeight: 700, letterSpacing: '-0.025em' }}
+            style={{ fontFamily: "'Supply', var(--font-space-grotesk), sans-serif", fontWeight: 700, letterSpacing: '-0.02em' }}
             className="text-white text-[17px] leading-none select-none"
           >
             Aphex

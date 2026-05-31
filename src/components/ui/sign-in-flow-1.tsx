@@ -339,21 +339,15 @@ function AphexBrand() {
   return (
     <div className="flex items-center gap-2">
       <span className="w-7 h-7 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="text-white"
-        >
-          <path d="M4 8h13v5a4 4 0 01-4 4H8a4 4 0 01-4-4zM17 9h2a2 2 0 110 4h-2M7 4v1M11 3v2M15 4v1" />
+        <svg width="15" height="15" viewBox="0 0 100 100" fill="currentColor" className="text-white" aria-hidden="true">
+          <rect x="42" y="16" width="16" height="12"/>
+          <rect x="36" y="34" width="10" height="12"/><rect x="54" y="34" width="10" height="12"/>
+          <rect x="30" y="52" width="40" height="12"/>
+          <rect x="22" y="70" width="14" height="12"/><rect x="64" y="70" width="14" height="12"/>
         </svg>
       </span>
-      <span className="text-white font-semibold tracking-tight text-sm">
+      <span style={{ fontFamily: "'Supply', var(--font-space-grotesk), sans-serif", fontWeight: 700, letterSpacing: '-0.02em' }}
+            className="text-white text-[17px] leading-none select-none">
         Aphex
       </span>
     </div>
