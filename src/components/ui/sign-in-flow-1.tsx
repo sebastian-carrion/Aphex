@@ -346,7 +346,7 @@ function AphexBrand() {
           <rect x="22" y="70" width="14" height="12"/><rect x="64" y="70" width="14" height="12"/>
         </svg>
       </span>
-      <span style={{ fontFamily: "'Supply', var(--font-space-grotesk), sans-serif", fontWeight: 700, letterSpacing: '-0.02em' }}
+      <span style={{ fontFamily: 'var(--font-young-serif)', fontWeight: 400, letterSpacing: '-0.01em' }}
             className="text-white text-[17px] leading-none select-none">
         Aphex
       </span>

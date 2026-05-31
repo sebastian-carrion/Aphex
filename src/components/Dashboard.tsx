@@ -734,7 +734,7 @@ export function AppShell({ onSignOut }: { onSignOut: () => void }) {
             </svg>
           </span>
           <span
-            style={{ fontFamily: "'Supply', var(--font-space-grotesk), sans-serif", fontWeight: 700, letterSpacing: '-0.02em' }}
+            style={{ fontFamily: 'var(--font-young-serif)', fontWeight: 400, letterSpacing: '-0.01em' }}
             className="text-white text-[17px] leading-none select-none"
           >
             Aphex
