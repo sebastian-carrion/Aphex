@@ -722,25 +722,25 @@ export function AppShell({ onSignOut }: { onSignOut: () => void }) {
     <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col">
       <EtherealBackground color="rgba(255,255,255,0.6)" animation={{ scale: 35, speed: 40 }} />
       {/* Top nav */}
-      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-3 border-b border-white/[0.06] bg-[#0a0a0a]/85 backdrop-blur-md">
+      <header className="fixed top-5 left-1/2 -translate-x-1/2 z-20 flex items-center justify-between pl-4 pr-3 py-2 rounded-full border border-white/10 bg-white/[0.06] backdrop-blur-md w-[calc(100%-2.5rem)] sm:w-auto gap-4 sm:gap-2">
         {/* Logo */}
-        <div className="flex items-center gap-2.5">
-          <div className="w-[28px] h-[28px] rounded-[8px] border border-white/25 flex items-center justify-center flex-shrink-0">
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <span className="w-7 h-7 rounded-full border border-white/20 bg-white/[0.06] flex items-center justify-center">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
               <path d="M6.5 1.25L11.75 11H1.25L6.5 1.25Z" stroke="white" strokeWidth="1.25" strokeLinejoin="round"/>
               <line x1="3.25" y1="8" x2="9.75" y2="8" stroke="white" strokeWidth="1.25" strokeLinecap="round"/>
             </svg>
-          </div>
+          </span>
           <span
             style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', fontWeight: 700, letterSpacing: '-0.025em' }}
-            className="text-white text-[18px] leading-none select-none"
+            className="text-white text-[17px] leading-none select-none"
           >
             Aphex
           </span>
         </div>
 
         {/* Desktop nav */}
-        <nav className="hidden sm:flex items-center gap-1">
+        <nav className="hidden sm:flex items-center gap-0.5 mx-2">
           {NAV.map((item) => (
             <button key={item.v} onClick={() => setNav(item.v)}
               className={cn('px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors',
@@ -756,19 +756,18 @@ export function AppShell({ onSignOut }: { onSignOut: () => void }) {
           onClick={() => setNav('settings')}
           title="Settings"
           className={cn(
-            'flex items-center gap-2 rounded-full transition-all duration-200 outline-none',
+            'rounded-full transition-all duration-200 outline-none flex-shrink-0',
             nav === 'settings'
-              ? 'ring-1 ring-white/40 ring-offset-2 ring-offset-[#0a0a0a]'
-              : 'hover:ring-1 hover:ring-white/20 hover:ring-offset-2 hover:ring-offset-[#0a0a0a]'
+              ? 'ring-1 ring-white/40 ring-offset-1 ring-offset-black/60'
+              : 'hover:ring-1 hover:ring-white/20 hover:ring-offset-1 hover:ring-offset-black/60'
           )}
         >
-          <span className="text-sm text-white/50 hidden sm:block pr-0.5">{state.account.name}</span>
-          <Avatar name={state.account.name} size={30} />
+          <Avatar name={state.account.name} size={28} />
         </button>
       </header>
 
       {/* Content */}
-      <main className="flex-1 px-6 py-6 max-w-5xl w-full mx-auto">
+      <main className="flex-1 px-6 pt-20 pb-6 max-w-5xl w-full mx-auto">
         {nav === 'dashboard' && (
           <DashboardView weekKeyCur={weekKeyCur} setWeekKeyCur={setWeekKeyCur}
             weekData={weekData} wage={wage} currency={currency} goal={goal}
