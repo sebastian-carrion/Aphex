@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Young_Serif } from "next/font/google";
 import localFont from "next/font/local";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const sfPro = localFont({
@@ -34,7 +35,10 @@ export default function RootLayout({
       lang="en"
       className={`${sfPro.variable} ${youngSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
