@@ -722,13 +722,24 @@ export function AppShell({ onSignOut }: { onSignOut: () => void }) {
     <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col">
       <EtherealBackground color="rgba(255,255,255,0.6)" animation={{ scale: 35, speed: 40 }} />
       {/* Top nav */}
-      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-3.5 border-b border-white/[0.08] bg-[#0a0a0a]/80 backdrop-blur-md">
-        <div className="flex items-center gap-2">
-          <span className="w-7 h-7 rounded-lg bg-white flex items-center justify-center">
-            <Icon name="coffee" size={14} className="text-black" />
+      <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-3 border-b border-white/[0.06] bg-[#0a0a0a]/85 backdrop-blur-md">
+        {/* Logo */}
+        <div className="flex items-center gap-2.5">
+          <div className="w-[28px] h-[28px] rounded-[8px] border border-white/25 flex items-center justify-center flex-shrink-0">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+              <path d="M6.5 1.25L11.75 11H1.25L6.5 1.25Z" stroke="white" strokeWidth="1.25" strokeLinejoin="round"/>
+              <line x1="3.25" y1="8" x2="9.75" y2="8" stroke="white" strokeWidth="1.25" strokeLinecap="round"/>
+            </svg>
+          </div>
+          <span
+            style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', fontWeight: 700, letterSpacing: '-0.025em' }}
+            className="text-white text-[18px] leading-none select-none"
+          >
+            Aphex
           </span>
-          <span className="font-bold text-white text-sm tracking-tight">Aphex</span>
         </div>
+
+        {/* Desktop nav */}
         <nav className="hidden sm:flex items-center gap-1">
           {NAV.map((item) => (
             <button key={item.v} onClick={() => setNav(item.v)}
@@ -739,10 +750,21 @@ export function AppShell({ onSignOut }: { onSignOut: () => void }) {
             </button>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-white/50 hidden sm:block">{state.account.name}</span>
+
+        {/* Avatar → Settings */}
+        <button
+          onClick={() => setNav('settings')}
+          title="Settings"
+          className={cn(
+            'flex items-center gap-2 rounded-full transition-all duration-200 outline-none',
+            nav === 'settings'
+              ? 'ring-1 ring-white/40 ring-offset-2 ring-offset-[#0a0a0a]'
+              : 'hover:ring-1 hover:ring-white/20 hover:ring-offset-2 hover:ring-offset-[#0a0a0a]'
+          )}
+        >
+          <span className="text-sm text-white/50 hidden sm:block pr-0.5">{state.account.name}</span>
           <Avatar name={state.account.name} size={30} />
-        </div>
+        </button>
       </header>
 
       {/* Content */}
